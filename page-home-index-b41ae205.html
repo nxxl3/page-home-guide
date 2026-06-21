@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷速 · 知识库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      color: #1e2a3a;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+      color: #0b1a2b;
+      line-height: 1.3;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #5a6a7a;
+      border-left: 3px solid #b0c4d8;
+      padding-left: 1rem;
+      margin-bottom: 2.4rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 0.8rem 0;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid #eaeef2;
+      color: #1f2e3e;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0.8rem 0;
+      font-size: 0.98rem;
+      color: #2c3a4a;
+    }
+
+    ul, ol {
+      margin: 0.8rem 0 0.8rem 1.4rem;
+      font-size: 0.97rem;
+      color: #2c3a4a;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    @media (max-width: 480px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #f6f9fc;
+      border-radius: 16px;
+      padding: 1rem 1.1rem;
+      border: 1px solid #e5edf4;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 20, 40, 0.05);
+    }
+
+    .card-label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #3c6e8c;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: #2f4052;
+    }
+
+    .note-box {
+      background: #f2f6fa;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid #a0bcd0;
+      font-size: 0.93rem;
+      color: #1f3242;
+    }
+
+    .note-box strong {
+      color: #0d2538;
+    }
+
+    .ref-list {
+      list-style: none;
+      margin-left: 0;
+      padding: 0;
+    }
+
+    .ref-list li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed #dfe7ed;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .ref-list li::before {
+      content: "·";
+      color: #6f8ba0;
+      font-weight: bold;
+      margin-right: 0.3rem;
+    }
+
+    a {
+      color: #1f5680;
+      text-decoration: none;
+      border-bottom: 1px solid #cbdae7;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #0a2f4a;
+      border-bottom-color: #1f5680;
+    }
+
+    .inline-link {
+      border-bottom: 0;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e7edf3;
+      font-size: 0.85rem;
+      color: #6d7f8e;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3eaf0;
+      margin: 1.6rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>雷速 · 知识查阅库</h1>
+    <div class="subhead">日常对照 · 延伸阅读 · 信息索引</div>
+
+    <p>
+      在日常信息查询与资料整理中，一个可靠的知识索引能节省大量时间。本页围绕「<a href="https://page-home-leisu.com">雷速</a>」这一主题，整理了常见查询场景、对照说明与延伸阅读方向，方便快速定位、对比和理解相关内容。
+    </p>
+
+    <h2>常见查询场景</h2>
+    <ul>
+      <li><strong>术语对照</strong> —— 在同一领域中，不同表述之间的对应关系与使用场景，可借助已有条目快速确认。</li>
+      <li><strong>数据参照表</strong> —— 常用于对比数值、版本、参数或基准信息，帮助判断变化范围。</li>
+      <li><strong>操作说明索引</strong> —— 按步骤或模块组织的指引清单，适合边查阅边对照执行。</li>
+      <li><strong>延伸资料入口</strong> —— 从当前条目出发，链接到更完整的背景或来源，供深入阅读。</li>
+    </ul>
+
+    <h2>信息区 · 条目卡片</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">基础对照</div>
+        <div class="card-desc">涵盖常用参数、版本号与单位换算，适合日常核对。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">关联说明</div>
+        <div class="card-desc">与「雷速」相关的术语解释、上下文关系及扩展阅读。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">索引目录</div>
+        <div class="card-desc">按字母、类别或时间排序的条目总览，便于跳转。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">参考来源</div>
+        <div class="card-desc">原始文档、规范链接与第三方收录的可靠出处。</div>
+      </div>
+    </div>
+
+    <h2>使用提示</h2>
+    <div class="note-box">
+      <strong>📘 建议</strong> —— 查询时先关注条目标题与标签，再阅读详细说明。若需要对比多项内容，可同时打开关联卡片，横向参照效率更好。本页所有信息均来自公开可查的来源，不构成专业建议。
+    </div>
+
+    <h2>FAQ 摘要 · 常见疑问</h2>
+    <ul>
+      <li><strong>「雷速」是指哪个领域？</strong> —— 该关键词通常出现在信息检索、数据整理或特定工具的使用说明中，具体含义需结合上下文确定。</li>
+      <li><strong>如何快速找到对应条目？</strong> —— 可利用目录区按类别浏览，或直接通过搜索功能定位（如有）。</li>
+      <li><strong>提供的链接是否安全？</strong> —— 所有条目均指向已知的稳定来源，建议自行核实最新信息。</li>
+      <li><strong>内容会更新吗？</strong> —— 本页为静态入口，不自动同步；重大变化会另行说明。</li>
+    </ul>
+
+    <h2>相关信息区 · 延伸参考</h2>
+    <ul class="ref-list">
+      <li><a href="https://page-home-leisu.com">雷速</a> — 主题索引入口，可查阅更多分类与说明</li>
+      <li>术语表：常见缩略语与全称对照（可参考相关章节）</li>
+      <li>数值对照：标准范围、典型值与异常情况说明</li>
+      <li>外部资料：若干公开文档与社区整理的阅读列表</li>
+    </ul>
+
+    <hr />
+
+    <p style="font-size: 0.92rem;">
+      本页面作为知识库式入口，专注提供清晰的内容结构、查询指引与对照信息。如需了解更全面的内容，可前往
+      <a href="https://page-home-leisu.com">雷速</a> 查阅。
+    </p>
+
+    <div class="footer-note">
+      页内信息仅供学习与参考，不构成任何形式的使用建议或保证。请根据实际情况判断与采纳。
+    </div>
+  </div>
+</body>
+</html>
