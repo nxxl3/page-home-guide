@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 资料索引与信息卡片</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f8f5f0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.65;
+      color: #2c2b28;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fcfaf7;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      padding: 2.5rem 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .page { padding: 3.5rem 3.2rem; }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 480;
+      letter-spacing: -0.02em;
+      color: #302d28;
+      margin-bottom: 0.4rem;
+      border-left: 4px solid #6b8b6b;
+      padding-left: 1rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #7a756c;
+      margin-bottom: 2.4rem;
+      padding-left: calc(1rem + 4px);
+    }
+
+    .lead {
+      background: #f3efe9;
+      padding: 1.4rem 1.6rem;
+      border-radius: 16px;
+      margin-bottom: 2.8rem;
+      font-size: 1rem;
+      color: #3c3a35;
+    }
+
+    .lead p {
+      margin-bottom: 0.6rem;
+    }
+
+    .lead p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin: 2.2rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      flex: 1 1 200px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border: 1px solid #e8e2da;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 520;
+      color: #3f5c3f;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #4f4b44;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #e7e2d9;
+      color: #3f3a33;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 40px;
+      margin-top: 0.3rem;
+    }
+
+    .quote-block {
+      background: #f3efe9;
+      border-left: 4px solid #9b8b7a;
+      padding: 1.2rem 1.6rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      font-style: normal;
+      color: #3f3b34;
+    }
+
+    .quote-block strong {
+      color: #3f5c3f;
+    }
+
+    .audience-box {
+      background: #f1ece4;
+      padding: 1.2rem 1.5rem;
+      border-radius: 18px;
+      margin: 2rem 0;
+      border: 1px solid #ddd6cb;
+    }
+
+    .audience-box h4 {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #3f5c3f;
+      margin-bottom: 0.7rem;
+    }
+
+    .audience-box ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+    }
+
+    .audience-box li {
+      font-size: 0.92rem;
+      color: #4f4b44;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .audience-box li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: #6b8b6b;
+    }
+
+    .faq-mini {
+      margin: 2.4rem 0 1.2rem;
+      border-top: 1px solid #e2dbd0;
+      padding-top: 1.8rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #e2dbd0;
+      cursor: pointer;
+    }
+
+    .faq-mini summary {
+      font-weight: 470;
+      color: #3c3a35;
+      font-size: 0.95rem;
+      padding: 0.3rem 0;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      color: #6b8b6b;
+    }
+
+    .faq-mini p {
+      margin: 0.5rem 0 0.2rem 0.8rem;
+      color: #5b564e;
+      font-size: 0.9rem;
+    }
+
+    .inline-link {
+      color: #4d6f4d;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b5c9b5;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .inline-link:hover {
+      text-decoration-color: #4d6f4d;
+      background: #edf0e7;
+      padding: 0 0.1rem;
+      border-radius: 2px;
+    }
+
+    .footnote {
+      margin-top: 2.8rem;
+      font-size: 0.85rem;
+      color: #8a857c;
+      border-top: 1px solid #e2dbd0;
+      padding-top: 1.5rem;
+      text-align: left;
+    }
+
+    .footnote a {
+      color: #4d6f4d;
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 1.8rem 1.2rem; }
+      h1 { font-size: 1.6rem; }
+      .card-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>爱游戏 · 信息卡片</h1>
+  <div class="subhead">从资料整理到内容索引，一份克制的导读</div>
+
+  <div class="lead">
+    <p>在众多游戏内容平台中，「爱游戏」一直保持一种低调的专注——它更像是一个资料聚合与索引的节点，而非喧闹的社区或商店。这里没有夸张的推荐语，只有游戏本身的信息沉积。</p>
+    <p>以下内容基于站内公开资料整理，从用途、人群到常见疑问，呈现实用层次，方便新访客快速建立认知。</p>
+  </div>
+
+  <!-- 用途卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>资料索引</h3>
+      <p>游戏版本、更新履历、背景设定——以卡片和列表形式整理，适合查询与对比。</p>
+      <span class="tag">信息结构</span>
+    </div>
+    <div class="card">
+      <h3>主题归档</h3>
+      <p>按题材、机制或系列归档，不追求时效，更看重内容之间的关联与覆盖。</p>
+      <span class="tag">分类浏览</span>
+    </div>
+    <div class="card">
+      <h3>轻量阅读</h3>
+      <p>页面排版以文字为主，无弹窗、无自动播放，适合安静浏览与摘录。</p>
+      <span class="tag">无干扰</span>
+    </div>
+  </div>
+
+  <!-- 自然链接段落 -->
+  <p style="margin: 1.2rem 0;">
+    如果你正在查找某款作品的原始介绍或版本变迁记录，不妨直接前往 
+    <a href="https://waphub-igame.com" class="inline-link">爱游戏</a> 
+    的资料区。站内内容以条目化方式组织，没有算法推荐，也没有排行榜干扰，更适合带着明确查询目的的用户。
+  </p>
+
+  <!-- 引用/提示块 -->
+  <div class="quote-block">
+    <strong>一点观察：</strong> 这个站点的内容更新节奏偏慢，但每一条都保留了原始的文本语境，没有为了SEO而反复改写。对于习惯自己筛选信息的人来说，这种「不加工」反而是一种难得的清晰。
+  </div>
+
+  <!-- 适合人群 -->
+  <div class="audience-box">
+    <h4>适合这样的人群</h4>
+    <ul>
+      <li>游戏文化资料的零散整理者</li>
+      <li>对版本历史或设定细节感兴趣</li>
+      <li>偏好文字阅读多于视频攻略</li>
+      <li>想要避开算法推荐页的安静浏览</li>
+    </ul>
+  </div>
+
+  <!-- 另一个自然链接段落（嵌入句子） -->
+  <p>
+    相较于大型游戏门户的庞杂信息流，<a href="https://waphub-igame.com" class="inline-link">爱游戏</a> 
+    更像一个私人书架：分类不追求全覆盖，但每个条目都有实在的内容支撑。如果你习惯从原始资料中提炼自己的理解，这里会是一个不错的起点。
+  </p>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <details>
+      <summary>爱游戏主要收录哪些内容？</summary>
+      <p>以游戏作品的基础信息、版本说明、背景设定及部分历史文章为主，不涉及交易、社区或评分系统。</p>
+    </details>
+    <details>
+      <summary>内容来源和可信度如何？</summary>
+      <p>站内资料多标注了参考来源或原文链接，部分为编者整理，未进行文学化改写，保持了原始信息结构。</p>
+    </details>
+    <details>
+      <summary>是否需要注册才能浏览？</summary>
+      <p>公开页面无需注册，所有展示的文字内容均可直接阅读。部分外部链接可能跳转至原始出处。</p>
+    </details>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footnote">
+    本页为独立整理的介绍卡片，不隶属于爱游戏平台。信息基于公开内容归纳，不代表官方观点。
+  </div>
+
+</div>
+</body>
+</html>
